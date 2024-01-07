@@ -3,6 +3,7 @@ import { connectDB, disconnectDB } from "./config/db.js";
 import app from "./app.js";
 
 const PORT = process.env.PORT || 7000;
+
 // connection and listener
 connectDB()
   .then(() => {
