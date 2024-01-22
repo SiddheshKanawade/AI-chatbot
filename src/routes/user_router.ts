@@ -1,7 +1,15 @@
 import { Router } from "express";
 
-import { get_users, create_user, login_user } from "../controllers/user_controller.js";
-import {validate, signupValidate, loginValidate} from '../utils/validators.js'
+import {
+  get_users,
+  create_user,
+  login_user,
+} from "../controllers/user_controller.js";
+import {
+  validate,
+  signupValidate,
+  loginValidate,
+} from "../utils/validators.js";
 
 const user_router = Router();
 
