@@ -17,10 +17,15 @@ const validate = (validations: ValidationChain[]) => {
         return res.status(422).json({ errors: errors.array() })
     }
 }
-const signupValidate =[
-    body('name').notEmpty().withMessage('Username is required'),
+
+const loginValidate =[
     body('email').trim().isEmail().withMessage('Email is required'),
     body('password').trim().isLength({min:6}).withMessage('Password must be at least 6 characters long')
+
+]
+const signupValidate =[
+    body('name').notEmpty().withMessage('Username is required'),
+    ...loginValidate
 ]
 
-export { validate, signupValidate }
+export { validate, signupValidate, loginValidate}
